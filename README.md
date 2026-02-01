@@ -197,53 +197,31 @@ pnpm tsx src/main.ts
 
 ## 📁 Project Structure
 
-```mermaid
-graph TB
-    subgraph src [📂 src]
-        main[main.ts<br/>Entry Point]
-
-        subgraph config [📂 config]
-            endpoints[endpoints.ts]
-            env[ENV.ts]
-        end
-
-        subgraph services [📂 services]
-            auth[auth.ts]
-            ipo[ipo_checker.ts]
-            result[ipo_result_checker.ts]
-        end
-
-        subgraph lib [📂 lib]
-            bot[telegram_bot.ts]
-            formatter[message_formatter.ts]
-            error[error_handler.ts]
-        end
-
-        subgraph data [📂 data]
-            ipojson[(ipo.json)]
-            resultjson[(ipo_results.json)]
-        end
-
-        subgraph types [📂 types]
-            typesfile[index.ts]
-        end
-    end
-
-    subgraph github [📂 .github/workflows]
-        workflow[ipo-monitor.yml]
-    end
-
-    main --> services
-    main --> lib
-    services --> config
-    services --> data
-    lib --> config
-    workflow --> main
-
-    style main fill:#3178c6,color:#fff
-    style workflow fill:#2088FF,color:#fff
-    style ipojson fill:#f5a623,color:#000
-    style resultjson fill:#f5a623,color:#000
+```
+📦 meroshare-ipo-alert
+├── 📂 .github/workflows
+│   └── ipo-monitor.yml      # GitHub Actions workflow
+├── 📂 src
+│   ├── main.ts              # Entry point
+│   ├── 📂 config
+│   │   ├── endpoints.ts     # API endpoints
+│   │   └── ENV.ts           # Environment variables
+│   ├── 📂 services
+│   │   ├── auth.ts          # MeroShare authentication
+│   │   ├── ipo_checker.ts   # IPO monitoring service
+│   │   └── ipo_result_checker.ts
+│   ├── 📂 lib
+│   │   ├── telegram_bot.ts  # Telegram bot wrapper
+│   │   ├── message_formatter.ts
+│   │   └── error_handler.ts
+│   ├── 📂 data
+│   │   ├── ipo.json         # Tracked IPOs
+│   │   └── ipo_results.json # Tracked results
+│   └── 📂 types
+│       └── index.ts         # TypeScript types
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
 ---

@@ -136,7 +136,7 @@ You can also trigger it manually from the **Actions** tab.
 
 ```
 🔔 NEW IPO ALERT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🏢 Suryakunda Hydro Electric Ltd.
 
@@ -149,8 +149,8 @@ You can also trigger it manually from the **Actions** tab.
    • Opens:  Feb 1, 2026 12:30 PM
    • Closes: Feb 4, 2026 8:00 PM
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 Don't miss out—apply now!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 Share this with fellow investors
 ```
 
 </td>

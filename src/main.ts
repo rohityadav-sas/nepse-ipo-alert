@@ -10,22 +10,36 @@ async function main() {
     try {
         const auth_headers = await get_auth_headers();
 
-        await Promise.all([
-            check_new_ipos(auth_headers).then(async new_ipos => {
-                console.log('New IPOs:', new_ipos);
-                for (const ipo of new_ipos) {
-                    const message = format_ipo_message(ipo);
-                    await Bot.sendMessage(ENV.CHANNEL, message);
-                }
-            }),
-            check_new_ipo_results().then(async new_ipo_results => {
-                console.log('New IPO Results:', new_ipo_results);
-                for (const result of new_ipo_results) {
-                    const message = format_ipo_result_message(result);
-                    await Bot.sendMessage(ENV.CHANNEL, message);
-                }
-            })
+        const results = await Promise.allSettled([
+            check_new_ipos(auth_headers),
+            check_new_ipo_results(),
         ]);
+
+        if (results[0].status === "fulfilled") {
+            const new_ipos = results[0].value;
+            console.log("New IPOs:", new_ipos);
+            for (const ipo of new_ipos) {
+                const message = format_ipo_message(ipo);
+                await Bot.sendMessage(ENV.CHANNEL, message);
+            }
+        } else {
+            await handle_error(results[0].reason, "IPO Checker");
+        }
+
+        if (results[1].status === "fulfilled") {
+            const new_ipo_results = results[1].value;
+            console.log("New IPO Results:", new_ipo_results);
+            for (const result of new_ipo_results) {
+                const message = format_ipo_result_message(result);
+                await Bot.sendMessage(ENV.CHANNEL, message);
+            }
+        } else {
+            await handle_error(results[1].reason, "IPO Result Checker");
+        }
+
+        if (results.some((result) => result.status === "rejected")) {
+            process.exitCode = 1;
+        }
 
     } catch (error: any) {
         await handle_error(error, "Main Process");

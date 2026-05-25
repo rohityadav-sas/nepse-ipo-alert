@@ -1,5 +1,13 @@
 [
     {
+        "subGroup": "For General Public",
+        "companyName": "Kalanga Hydro Limited",
+        "shareTypeName": "IPO",
+        "shareGroupName": "Ordinary Shares",
+        "issueOpenDate": "May 22, 2026 9:00:00 AM",
+        "issueCloseDate": "May 27, 2026 5:00:00 PM"
+    },
+    {
         "subGroup": "General Public",
         "companyName": "Reliable Samriddhi Yojana-2",
         "shareTypeName": "IPO",
@@ -28,14 +36,6 @@
         "companyName": "Reliable Samriddhi Yojana-2",
         "shareTypeName": "IPO",
         "shareGroupName": "Close Ended Mutual Fund",
-        "issueOpenDate": "May 12, 2026 9:00:00 AM",
-        "issueCloseDate": "May 15, 2026 5:00:00 PM"
-    },
-    {
-        "subGroup": "For General Public",
-        "companyName": "Snow Rivers Limited.",
-        "shareTypeName": "IPO",
-        "shareGroupName": "Ordinary Shares",
         "issueOpenDate": "May 12, 2026 9:00:00 AM",
         "issueCloseDate": "May 15, 2026 5:00:00 PM"
     }

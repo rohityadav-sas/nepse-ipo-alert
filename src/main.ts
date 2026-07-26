@@ -12,7 +12,7 @@ async function main() {
 
         const results = await Promise.allSettled([
             check_new_ipos(auth_headers),
-            check_new_ipo_results(),
+            // check_new_ipo_results(),
         ]);
 
         if (results[0].status === "fulfilled") {
@@ -26,16 +26,16 @@ async function main() {
             await handle_error(results[0].reason, "IPO Checker");
         }
 
-        if (results[1].status === "fulfilled") {
-            const new_ipo_results = results[1].value;
-            console.log("New IPO Results:", new_ipo_results);
-            for (const result of new_ipo_results) {
-                const message = format_ipo_result_message(result);
-                await Bot.sendMessage(ENV.CHANNEL, message);
-            }
-        } else {
-            await handle_error(results[1].reason, "IPO Result Checker");
-        }
+        // if (results[1].status === "fulfilled") {
+        //     const new_ipo_results = results[1].value;
+        //     console.log("New IPO Results:", new_ipo_results);
+        //     for (const result of new_ipo_results) {
+        //         const message = format_ipo_result_message(result);
+        //         await Bot.sendMessage(ENV.CHANNEL, message);
+        //     }
+        // } else {
+        //     await handle_error(results[1].reason, "IPO Result Checker");
+        // }
 
         if (results[0].status === "rejected") {
             process.exitCode = 1;

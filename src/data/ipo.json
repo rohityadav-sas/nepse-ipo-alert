@@ -1,6 +1,14 @@
 [
     {
         "subGroup": "For General Public",
+        "companyName": "Citizens Super 50",
+        "shareTypeName": "IPO",
+        "shareGroupName": "Close Ended Mutual Fund",
+        "issueOpenDate": "Nov 18, 2026 9:00:00 AM",
+        "issueCloseDate": "Nov 23, 2026 5:00:00 PM"
+    },
+    {
+        "subGroup": "For General Public",
         "companyName": "6% RBBL Debenture 2089",
         "shareTypeName": "IPO",
         "shareGroupName": "Debentures",
@@ -30,13 +38,5 @@
         "shareGroupName": "Close Ended Mutual Fund",
         "issueOpenDate": "Sep 17, 2026 9:00:00 AM",
         "issueCloseDate": "Oct 1, 2026 5:00:00 PM"
-    },
-    {
-        "subGroup": "For General Public",
-        "companyName": "Muktinath Mutual Fund 2",
-        "shareTypeName": "IPO",
-        "shareGroupName": "Ordinary Shares",
-        "issueOpenDate": "Sep 17, 2026 9:00:00 AM",
-        "issueCloseDate": "Sep 22, 2026 5:00:00 PM"
     }
 ]
